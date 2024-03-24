@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#F95F62</color>
+    <color name="colorPrimaryDark">#343F4B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="salmonColor">#F95F62</color>
+    <color name="clickItem">#75949191</color>
+    <color name="gray">#65949191</color>
+    <color name="white">#fff</color>
+    <color name="blueDark">#FF1F2D3D</color>
+    <color name="darkMain">#0EA791</color>
+    <color name="design_snackbar_background_color" tools:override="true">#fff</color>
+</resources>

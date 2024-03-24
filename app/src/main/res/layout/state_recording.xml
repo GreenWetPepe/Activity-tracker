@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/state_motion"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="8dp">
+
+    <ImageView
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:alpha="0.3"
+            android:tint="@color/clickItem"
+            app:srcCompat="@drawable/true_activity"
+            android:id="@+id/StateMotionBox"/>
+
+    <TextView
+            android:text="@string/run"
+            android:layout_width="96dp"
+            android:layout_height="25dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:id="@+id/StateMotionName"
+            android:textColor="@color/clickItem"
+            android:layout_gravity="bottom|center_horizontal"
+            style="@style/active_motion"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/StateMotionBox"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="@+id/StateMotionBox"
+            app:layout_constraintEnd_toEndOf="@+id/StateMotionBox"
+            android:layout_marginEnd="8dp"/>
+
+    <ImageView
+            android:tint="@color/clickItem"
+            android:alpha="0.3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ac_adventurer"
+            android:id="@+id/StateMotionImg"
+            app:layout_constraintStart_toStartOf="@+id/StateMotionBox"
+            app:layout_constraintEnd_toEndOf="@+id/StateMotionBox"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toTopOf="@+id/StateMotionBox"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintVertical_bias="1.0"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

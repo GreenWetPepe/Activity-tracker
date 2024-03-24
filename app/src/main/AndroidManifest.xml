@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.example.activity_tracker">
+
+    <uses-feature android:name="android.hardware.bluetooth"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+            android:name=".application.MainApplication"
+            android:icon="@mipmap/ic_launcher_round"
+            android:allowBackup="true"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme" tools:ignore="GoogleAppIndexingWarning">
+
+        <service
+                android:name=".graphics.GraphicService"
+                android:enabled="true"
+                android:exported="true">
+        </service>
+        <service android:name=".bluetooth.BluetoothService"
+                 android:enabled="true"
+                 android:exported="true"
+        />
+        <activity
+                android:name=".application.MainActivity"
+                android:label="ActivityTracker"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".application.MotionsActivity"
+                android:label="Activities"
+                android:launchMode="singleTop"
+                android:noHistory="true"
+                android:parentActivityName=".application.MainActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".application.SettingsActivity"
+                android:label="Settings"
+                android:launchMode="singleTop"
+                android:noHistory="true"
+                android:parentActivityName=".application.MainActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".application.DataActivity"
+                android:label="Data"
+                android:launchMode="singleTop"
+                android:noHistory="true"
+                android:parentActivityName=".application.MainActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".application.DetailActivity"
+                android:label="Detail"
+                android:launchMode="singleTop"
+                android:noHistory="true"
+                android:parentActivityName=".application.DataActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <provider
+                android:name="androidx.core.content.FileProvider"
+                android:authorities="com.example.activity_tracker"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/provider_paths"/>
+        </provider>
+    </application>
+</manifest>
